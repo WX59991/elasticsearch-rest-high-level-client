@@ -1,0 +1,10 @@
+server:
+  port: 10008
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    elasticsearch:
+      cluster-name: 132.46.118.17:9200,132.46.129.67:9200,132.46.129.68:9200
+      properties:
+        xpack.security.user: elastic:elk@2019
