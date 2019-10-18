@@ -6,7 +6,6 @@ import com.example.elasticsearch.entity.AggEnum;
 import com.example.elasticsearch.entity.SearchParam;
 import com.example.elasticsearch.utils.ElasticSearchUtils;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.search.sort.SortOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +25,7 @@ public class ElasticSearchApplicationTests {
     @Autowired
     ElasticSearchUtils elasticSearchUtils;
 
-    String index = "blog";
+    String index = "eos";
 
     /**
      * 测试创建索引
@@ -100,11 +99,11 @@ public class ElasticSearchApplicationTests {
         searchParam.setPageNo(1);
         searchParam.setPageSize(10);
         Map<String, Object> param = new HashMap<>();
-        param.put("_id", "EMgiGW0Blxl66DRzeP0v");
+        param.put("_id", "1319062508677791");
         searchParam.setParam(param);
-        Map<String, SortOrder> sort = new HashMap<>();
-        sort.put("_id", SortOrder.DESC);
-        searchParam.setSorr(sort);
+//        Map<String, SortOrder> sort = new HashMap<>();
+//        sort.put("_id", SortOrder.DESC);
+//        searchParam.setSorr(sort);
         try {
             SearchResponse searchResponse = elasticSearchUtils.search(index, searchParam);
             System.out.println("检索结果：" + JSON.toJSONString(searchResponse.getHits()));
@@ -170,7 +169,7 @@ public class ElasticSearchApplicationTests {
     @Test
     public void deleteByQuery(){
         Map<String, Object> param = new HashMap<>();
-        param.put("_id", "7ZMXGW0Bx2-tjtKx3EkU");
+        param.put("location", "*");
         try{
             elasticSearchUtils.deleteByQuery(index,param);
         }catch (Exception e){

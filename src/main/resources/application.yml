@@ -5,6 +5,6 @@ spring:
     allow-bean-definition-overriding: true
   data:
     elasticsearch:
-      cluster-name: 132.46.118.17:9200,132.46.129.67:9200,132.46.129.68:9200
+      cluster-name: 132.46.129.22:9200,132.46.129.23:9200,132.46.129.24:9200
       properties:
         xpack.security.user: elastic:elk@2019
