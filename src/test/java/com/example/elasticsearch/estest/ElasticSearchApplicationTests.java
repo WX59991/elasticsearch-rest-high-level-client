@@ -1,4 +1,4 @@
-package com.example.elasticsearch;
+package com.example.elasticsearch.estest;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -49,7 +49,7 @@ public class ElasticSearchApplicationTests {
             jsonObject.put("address", "116.550316:39.924288");
             jsonObject.put("remark","测试数据");
             //插入单条
-            elasticSearchUtils.insert(index, jsonObject);
+            elasticSearchUtils.insert(index, jsonObject,null);
             List<JSONObject> datas = new ArrayList<>();
             JSONObject jsonObject2 = new JSONObject();
             jsonObject2.put("address", "116.551179:39.933031");
